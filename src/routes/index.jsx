@@ -17,6 +17,6 @@ export default function Router() {
 }
 
 const Home = Loadable(lazy(() => import("../pages/Home")));
+// Auth
 const Register = Loadable(lazy(() => import("../pages/Register")));
 const Login = Loadable(lazy(() => import("../pages/Login")));
-// Auth
