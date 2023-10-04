@@ -1,5 +1,8 @@
-import { lazy } from "react";
 import { useRoutes } from "react-router-dom";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+
 export default function Router() {
   return useRoutes([
     {
@@ -10,8 +13,3 @@ export default function Router() {
     { path: "login", element: <Login /> },
   ]);
 }
-
-const Home = Loadable(lazy(() => import("../pages/Home")));
-// Auth
-const Register = Loadable(lazy(() => import("../pages/Register")));
-const Login = Loadable(lazy(() => import("../pages/Login")));
