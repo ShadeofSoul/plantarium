@@ -1,7 +1,7 @@
 import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
-import { createContext, useContext } from "react";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createContext, useContext } from "react";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAmAW2cAPq24EGu3cGmcQqyBMYlli87JgQ",
@@ -25,13 +25,15 @@ export const useAuth = () => {
 const AuthContextProvider = ({ children }) => {
   const signUp = async (email, password, firstName, lastName) => {
     try {
+      const auth = getAuth();
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
       const user = userCredential.user;
-      await user.updateProfile({
+
+      await updateProfile(user, {
         displayName: `${firstName} ${lastName}`,
       });
       setUser(user);
