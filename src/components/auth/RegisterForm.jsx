@@ -8,13 +8,13 @@ import {
   CssBaseline,
   FormControlLabel,
   Grid,
-  Link,
   TextField,
   Typography,
 } from "@mui/material";
 import React from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { paths } from "../../routes/paths";
+import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
   const { signUp } = useAuth();
@@ -108,7 +108,7 @@ const RegisterForm = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href={paths.login} variant="body2">
+              <Link to={paths.login} variant="body2">
                 Already have an account? Login
               </Link>
             </Grid>
