@@ -1,7 +1,7 @@
-authContext.Provider// Import the functions you need from the SDKs you need
 import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { createContext, useContext } from "react";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAmAW2cAPq24EGu3cGmcQqyBMYlli87JgQ",
@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth(app);
 
 export const authContext = createContext();
 export const useAuth = () => {
@@ -22,12 +23,28 @@ export const useAuth = () => {
 };
 
 const AuthContextProvider = ({ children }) => {
-
-
-
-    
-    const values={
-
+  const signUp = async (email, password, firstName, lastName) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      await user.updateProfile({
+        displayName: `${firstName} ${lastName}`,
+      });
+      setUser(user);
+      return user;
+    } catch (error) {
+      throw error;
     }
+  };
+
+  const values = {
+    signUp,
+  };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
+
+export default AuthContextProvider;

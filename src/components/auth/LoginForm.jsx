@@ -14,8 +14,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import { paths } from "../../routes/paths";
+import { useAuth } from "../../contexts/AuthContext";
 
 const LoginForm = () => {
+  const {}=useAuth();
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

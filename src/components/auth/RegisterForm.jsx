@@ -1,21 +1,30 @@
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import {
-    Avatar,
-    Box,
-    Button,
-    Checkbox,
-    Container,
-    CssBaseline,
-    FormControlLabel,
-    Grid,
-    Link,
-    TextField,
-    Typography,
+  Avatar,
+  Box,
+  Button,
+  Checkbox,
+  Container,
+  CssBaseline,
+  FormControlLabel,
+  Grid,
+  Link,
+  TextField,
+  Typography,
 } from "@mui/material";
 import React from "react";
+import { useAuth } from "../../contexts/AuthContext";
 import { paths } from "../../routes/paths";
 
 const RegisterForm = () => {
+  const { signUp } = useAuth();
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    signUp(data.get("email"), data.get("password"), data.get("firstName"), data.get("lastName"))
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -33,7 +42,12 @@ const RegisterForm = () => {
         <Typography component="h1" variant="h5">
           Registration
         </Typography>
-        <Box component="form" noValidate sx={{ mt: 3 }}>
+        <Box
+          component="form"
+          noValidate
+          sx={{ mt: 3 }}
+          onSubmit={handleRegister}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
