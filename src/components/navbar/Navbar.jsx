@@ -118,7 +118,7 @@ export default function Navbar() {
             src="/logo.svg"
             alt=""
             width={"40px"}
-            style={{ color: "white" }}
+            style={{ color: "white", paddingRight: 10 }}
           />
           <SearchInput />
           <Box sx={{ flexGrow: 1 }} />
