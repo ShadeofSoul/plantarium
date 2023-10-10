@@ -11,6 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 import SearchInput from "./partials/SearchInput";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -129,16 +130,7 @@ export default function Navbar() {
               color="inherit"
             >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <ShoppingCartIcon />
               </Badge>
             </IconButton>
             <IconButton
