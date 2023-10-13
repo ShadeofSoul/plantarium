@@ -2,6 +2,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
@@ -11,7 +12,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 import SearchInput from "./partials/SearchInput";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -113,7 +113,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="secondary">
+      <AppBar position="fixed" color="secondary">
         <Toolbar>
           <img
             src="/logo.svg"
