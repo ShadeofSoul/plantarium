@@ -19,6 +19,13 @@ const MainBanner = () => {
       <img
         src="https://i.pinimg.com/originals/ac/98/ce/ac98ce1eb6858366478a47b634ba8bd2.gif"
         alt=""
+        style={{
+          height: "40vw",
+          width: "40vw",
+          borderRadius: "200px",
+          margin: "3vh",
+          marginTop: "11vh",
+        }}
       />
     </BannerFrame>
   );
