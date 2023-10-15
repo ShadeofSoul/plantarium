@@ -10,12 +10,10 @@ const MainBanner = () => {
       justifyContent="space-around"
     >
       <Stack alignItems="center">
-        <Typography>
+        <Typography variant="h1">
           FIND <br /> YOUR <br /> SOULPLANT
         </Typography>
-        <BannerButton variant="outlined">
-          SHOP NOW &#8594;
-        </BannerButton>
+        <BannerButton variant="outlined">SHOP NOW &#8594;</BannerButton>
       </Stack>
 
       <img

@@ -12,6 +12,10 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Times New Roman, Times, serif",
+    h1: {
+      color: "#ffffff",
+      textAlign: "center",
+    },
   },
 });
 
