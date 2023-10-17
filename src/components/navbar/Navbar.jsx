@@ -1,4 +1,5 @@
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Typography } from "@mui/material";
@@ -77,6 +78,16 @@ export default function Navbar() {
             >
               <Badge badgeContent={4} color="error">
                 <ShoppingCartIcon />
+              </Badge>
+            </IconButton>
+
+            <IconButton
+              size="large"
+              aria-label="show 4 new mails"
+              color="inherit"
+            >
+              <Badge badgeContent={2} color="error">
+                <FavoriteIcon />
               </Badge>
             </IconButton>
             <IconButton
