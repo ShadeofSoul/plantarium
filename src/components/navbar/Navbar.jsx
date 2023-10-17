@@ -1,6 +1,7 @@
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
@@ -9,8 +10,9 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import SearchInput from "./partials/SearchInput";
+import theme from "../../theme/theme";
 import MobileMenu from "./MobileMenu";
+import SearchInput from "./partials/SearchInput";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -62,12 +64,9 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" color="secondary">
         <Toolbar>
-          <img
-            src="/logo.svg"
-            alt=""
-            width={"40px"}
-            style={{ color: "white", paddingRight: 10 }}
-          />
+          <Typography color={theme.palette.primary.main} variant="h4">
+            PLANTARIUM
+          </Typography>
           <SearchInput />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

@@ -16,6 +16,9 @@ const theme = createTheme({
       color: "#ffffff",
       textAlign: "center",
     },
+    h5: {
+      // fontWeight: 600,
+    },
   },
 });
 
