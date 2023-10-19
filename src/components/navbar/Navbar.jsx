@@ -66,7 +66,10 @@ export default function Navbar() {
           </Typography>
           <SearchInput />
           <Box sx={{ flexGrow: 1 }} />
-          <ButtonList handleMobileMenuOpen={handleMobileMenuOpen} />
+          <ButtonList
+            handleProfileMenuOpen={handleProfileMenuOpen}
+            menuId={menuId}
+          />
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
