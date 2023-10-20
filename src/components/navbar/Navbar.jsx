@@ -7,7 +7,9 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import { paths } from "../../routes/paths";
 import theme from "../../theme/theme";
 import MobileMenu from "./MobileMenu";
 import ButtonList from "./partials/ButtonList";
@@ -19,6 +21,7 @@ export default function Navbar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -29,6 +32,7 @@ export default function Navbar() {
   };
 
   const handleMenuClose = () => {
+    navigate(paths.login);
     setAnchorEl(null);
     handleMobileMenuClose();
   };
