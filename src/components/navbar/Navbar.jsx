@@ -7,6 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
+import { useAuth } from "../../contexts/AuthContext";
 import theme from "../../theme/theme";
 import MobileMenu from "./MobileMenu";
 import ButtonList from "./partials/ButtonList";
@@ -17,6 +18,7 @@ export default function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const { user } = useAuth();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -52,8 +54,17 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {user ? (
+        <>
+          <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+          <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+        </>
+      ) : (
+        <>
+          <MenuItem onClick={handleMenuClose}>Sign in</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
+        </>
+      )}
     </Menu>
   );
 
