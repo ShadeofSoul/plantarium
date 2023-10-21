@@ -11,5 +11,8 @@ export default function Router() {
     },
     { path: "auth/register", element: <Register /> },
     { path: "auth/login", element: <Login /> },
+    {
+      path: "profile",
+    },
   ]);
 }

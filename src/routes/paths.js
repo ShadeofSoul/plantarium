@@ -1,10 +1,10 @@
 export const paths = {
   home: "/",
   // auth
-  register: "/auth/register",
-  login: "/auth/login",
+  register: "auth/register",
+  login: "auth/login",
   // profile
-  profile: "profile",
+  profile: "/profile",
   // cart
-  cart: "/cart",
+  profileCart: "/profile/cart",
 };

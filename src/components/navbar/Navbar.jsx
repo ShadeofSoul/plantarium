@@ -66,12 +66,10 @@ export default function Navbar() {
       ) : (
         <>
           <MenuItem onClick={handleMenuClose}>
-            <StyledLink to={paths.login} style={{}}>
-              Sign in
-            </StyledLink>
+            <StyledLink to={paths.login}>Sign in</StyledLink>
           </MenuItem>
           <MenuItem onClick={handleMenuClose}>
-            <StyledLink>Cart</StyledLink>
+            <StyledLink to={paths.cart}>Cart</StyledLink>
           </MenuItem>
         </>
       )}
