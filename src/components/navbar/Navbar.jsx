@@ -7,7 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { paths } from "../../routes/paths";
 import theme from "../../theme/theme";
@@ -65,7 +65,11 @@ export default function Navbar() {
         </>
       ) : (
         <>
-          <MenuItem onClick={handleMenuClose}>Sign in</MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link to={paths.login}>
+            Sign in
+            </Link>
+            </MenuItem>
           <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
         </>
       )}
