@@ -33,7 +33,6 @@ export default function Navbar() {
   };
 
   const handleMenuClose = () => {
-    navigate(paths.login);
     setAnchorEl(null);
     handleMobileMenuClose();
   };
@@ -71,7 +70,9 @@ export default function Navbar() {
               Sign in
             </StyledLink>
           </MenuItem>
-          <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <StyledLink>Cart</StyledLink>
+          </MenuItem>
         </>
       )}
     </Menu>

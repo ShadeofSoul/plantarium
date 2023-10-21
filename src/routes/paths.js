@@ -3,4 +3,8 @@ export const paths = {
   // auth
   register: "/auth/register",
   login: "/auth/login",
+  // profile
+  profile: "profile",
+  // cart
+  cart: "/cart",
 };
