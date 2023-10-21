@@ -7,10 +7,11 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { paths } from "../../routes/paths";
 import theme from "../../theme/theme";
+import { StyledLink } from "../StyledComponents/global.styled";
 import MobileMenu from "./MobileMenu";
 import ButtonList from "./partials/ButtonList";
 import SearchInput from "./partials/SearchInput";
@@ -66,10 +67,10 @@ export default function Navbar() {
       ) : (
         <>
           <MenuItem onClick={handleMenuClose}>
-            <Link to={paths.login}>
-            Sign in
-            </Link>
-            </MenuItem>
+            <StyledLink to={paths.login} style={{}}>
+              Sign in
+            </StyledLink>
+          </MenuItem>
           <MenuItem onClick={handleMenuClose}>Cart</MenuItem>
         </>
       )}
