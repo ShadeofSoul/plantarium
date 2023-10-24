@@ -1,6 +1,10 @@
 import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+} from "firebase/auth";
 import { createContext, useContext, useState } from "react";
 
 const firebaseConfig = {
@@ -25,8 +29,6 @@ export const useAuth = () => {
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-
-
   const signUp = async (email, password, firstName, lastName) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -46,9 +48,17 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
+const signIn = async()=>{
+  
+}
+
+
+
+  console.log(user);
+
   const values = {
     signUp,
-    user
+    user,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };

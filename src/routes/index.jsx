@@ -13,6 +13,11 @@ export default function Router() {
     { path: "auth/login", element: <Login /> },
     {
       path: "profile",
+      children: [
+        {
+          path: "cart"
+        }
+      ]
     },
   ]);
 }

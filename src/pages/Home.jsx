@@ -8,7 +8,7 @@ const Home = () => {
       <Navbar />
       <MainBanner />
     </>
-  );
+  );  
 };
 
 export default Home;
