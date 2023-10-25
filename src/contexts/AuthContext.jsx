@@ -48,16 +48,20 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-const signIn = async()=>{
-  
-}
-
-
-
-  console.log(user);
+  const signIn = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      setUser(user);
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  };
 
   const values = {
     signUp,
+    signIn,
     user,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
