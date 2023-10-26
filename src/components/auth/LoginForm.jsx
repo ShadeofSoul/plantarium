@@ -12,12 +12,18 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { paths } from "../../routes/paths";
-import { useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { paths } from "../../routes/paths";
 
 const LoginForm = () => {
-  const {}=useAuth();
+  const { signIn } = useAuth();
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    signIn(data.get("email"), data.get("password"));
+  };
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -65,6 +71,7 @@ const LoginForm = () => {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            onSubmit={handleLogin}
           >
             Login
           </Button>
