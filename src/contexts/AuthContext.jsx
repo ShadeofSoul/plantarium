@@ -6,6 +6,8 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { paths } from "../routes/paths";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAmAW2cAPq24EGu3cGmcQqyBMYlli87JgQ",
@@ -28,6 +30,7 @@ export const useAuth = () => {
 
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   const signUp = async (email, password, firstName, lastName) => {
     try {
@@ -42,6 +45,7 @@ const AuthContextProvider = ({ children }) => {
         displayName: `${firstName} ${lastName}`,
       });
       setUser(user);
+      navigate(paths.home);
       return user;
     } catch (error) {
       throw error;
@@ -50,12 +54,17 @@ const AuthContextProvider = ({ children }) => {
 
   const signIn = async (email, password) => {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
       setUser(user);
+      navigate(paths.home);
       return user;
     } catch (error) {
-      throw error;
+      alert(error);
     }
   };
 
