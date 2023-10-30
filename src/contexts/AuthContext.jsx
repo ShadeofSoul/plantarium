@@ -68,9 +68,12 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
+  const signOutUser = () => signOut(auth).then(() => setUser(null));
+
   const values = {
     signUp,
     signIn,
+    signOutUser,
     user,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;

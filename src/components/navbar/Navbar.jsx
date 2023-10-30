@@ -21,7 +21,7 @@ export default function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-  const { user } = useAuth();
+  const { user, signOutUser } = useAuth();
   const navigate = useNavigate();
 
   const handleProfileMenuOpen = (event) => {
@@ -62,7 +62,7 @@ export default function Navbar() {
         <>
           <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
           <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-          <MenuItem>Log Out</MenuItem>
+          <MenuItem onClick={signOutUser}>Sign Out</MenuItem>
         </>
       ) : (
         <>
