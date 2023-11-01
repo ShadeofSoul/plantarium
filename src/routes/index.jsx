@@ -6,18 +6,20 @@ import Register from "../pages/Register";
 export default function Router() {
   return useRoutes([
     {
-      path: "/",
+      path: "/", // Корень
       element: <Home />,
-    },
-    { path: "auth/register", element: <Register /> },
-    { path: "auth/login", element: <Login /> },
-    {
-      path: "profile",
       children: [
+        { path: "register", element: <Register /> },
+        { path: "login", element: <Login /> },
         {
-          path: "cart"
-        }
-      ]
+          path: "profile",
+          children: [
+            {
+              path: "cart",
+            },
+          ],
+        },
+      ],
     },
   ]);
 }

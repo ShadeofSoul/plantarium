@@ -62,7 +62,7 @@ export default function Navbar() {
         <>
           <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
           <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-          <MenuItem onClick={signOutUser}>Sign Out</MenuItem>
+          <MenuItem onClick={signOutUser}>Log Out</MenuItem>
         </>
       ) : (
         <>

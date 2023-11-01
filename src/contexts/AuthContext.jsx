@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
 import { createContext, useContext, useState } from "react";
